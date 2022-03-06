@@ -36,10 +36,20 @@ struct StockView : View {
 
                 .padding(.top, 10)
                 form()
+            HStack{
+                Spacer()
+            Image("bon-appetit-removebg-preview")
+                //.imageScale(.large)
+                .resizable()
+                .frame(width: 100, height: 75, alignment: .center)
+                .padding(.bottom, 10)
+                .foregroundColor(.green.opacity(0.35))
+                .padding(.top, 10)
+                Spacer()
+            }
+            
               
         
-            
-            
         
             Button(action : {
                  //self.ftvm.getRecetteByName(name:selectedPlat)
@@ -113,8 +123,10 @@ extension StockView {
             
            
         }
+           
         
     }
+        
 
     }
    

@@ -49,7 +49,7 @@ struct IngredientView: View {
                 ListIngredientView(ingredient : ingredient, ingredientsVM : ingredientsVM)
             }
             //.listStyle(PlainListStyle())
-            .onDelete(perform : ingredientsVM.deleteIngredient)
+            //.onDelete(perform : ingredientsVM.deleteIngredient)
             .onMove(perform : ingredientsVM.moveIngredient)
         }
         

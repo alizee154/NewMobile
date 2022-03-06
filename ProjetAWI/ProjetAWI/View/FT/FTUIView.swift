@@ -96,7 +96,7 @@ struct FTUIView : View {
                                 ing in
                                 HStack{
                                     Text(listIng(ft: ft)[ing].ingredientName)
-                                    Text(listQuantity(ft: ft)[ing])
+                                    Text("\(Int(listQuantity(ft: ft)[ing])!*number)")
                                     Text(listIng(ft: ft)[ing].ingredientUnit)
                                     
                                 }
@@ -147,7 +147,7 @@ struct FTUIView : View {
                         VStack(alignment : .leading){
                             Text("Coût matière : ")
                                 .padding(.bottom, 5)
-                            Text("\(coutMatiere(listI: listIng(ft: ft), listQ: listQuantity(ft: ft))) euros")
+                            Text("\(coutMatiere(listI: listIng(ft: ft), listQ: listQuantity(ft: ft))*Double(number)) euros")
                                 .underline()
                             Spacer()
                             Text("Coût du personnel : ")
