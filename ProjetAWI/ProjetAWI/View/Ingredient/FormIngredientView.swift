@@ -4,7 +4,6 @@
 //
 //  Created by m1 on 23/02/2022.
 //
-
 import Foundation
 import SwiftUI
 
@@ -19,7 +18,7 @@ struct FormIngredientView : View {
     @State private var unitprice : String = ""
     @Environment(\.dismiss) var dismiss
 
-    @StateObject var newing : IngredientViewModel = IngredientViewModel(ingredient: Ingredient(ingredientId: "", ingredientName: "a", ingredientUnit: "",ingredientStocks: "",ingredientUnitprice: "",ingredientCategory: "",ingredientAllergene: ""))
+    @StateObject var newing : IngredientViewModel = IngredientViewModel(ingredient: Ingredient(ingredientId: "", ingredientName: "", ingredientUnit: "",ingredientStocks: "",ingredientUnitprice: "",ingredientCategory: "",ingredientAllergene: ""))
 
     @StateObject var ingredient = IngredientViewModel(ingredient : Ingredient(ingredientId:"",ingredientName:"", ingredientUnit: "", ingredientStocks: "", ingredientUnitprice: "", ingredientCategory: "", ingredientAllergene: ""))
     var body : some View{
@@ -31,10 +30,19 @@ struct FormIngredientView : View {
                     .padding(5)
             }
             Section(header : Text("Unité")) {
-                TextField("Enter an unit", text: $newing.model.ingredientUnit)
+                Picker("Unité", selection: $newing.model.ingredientUnit) {
+                        Text("Kg").tag("Kg")
+                        Text("L").tag("L")
+                        Text("Pièce(s)").tag("Pièce(s)")
+                    
+            }.pickerStyle(.menu)
+            }
+            
+            /*Section(header : Text("Unité")) {
+                TextField("Enter a unit", text: $newing.model.ingredientUnit)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(5)
-            }
+            }*/
             Section(header : Text("Stocks")) {
                 TextField("Enter a stock", text: $newing.model.ingredientStocks)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -99,7 +107,7 @@ struct FormIngredientView : View {
                 
             //}
         }
-    }).navigationTitle("New Ingredient")
+    }).navigationTitle("Nouvel Ingrédient")
                 .navigationBarTitleDisplayMode(.inline)
 }
 }

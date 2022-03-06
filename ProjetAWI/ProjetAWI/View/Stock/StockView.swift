@@ -26,22 +26,17 @@ struct StockView : View {
         
        
 
-            VStack{
+        VStack(alignment: .center){
+            Image(systemName: "bag.fill")
+                .imageScale(.large)
+               // .resizable()
+                //.frame(width: 300, height: 30, alignment: .center)
+                .padding(.bottom, 10)
+                .foregroundColor(.green.opacity(0.35))
+
+                .padding(.top, 10)
                 form()
-                /*Section(header : Text("Nom du plat")) {
-                    Picker("Nom du plat", selection: $selectedPlat) {
-                            Text("Pates").tag("pates")
-                            Text("burger").tag("burger")
-                            Text("puree").tag("puree")
-                        }
-                    
-                }
-                
-                Section(header : Text("Nombre de plats vendus")) {
-                    TextField("Enter nbPlat", value: $nbPlat, formatter : formatter)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(5)
-                }*/
+              
         
             
             
@@ -59,9 +54,7 @@ struct StockView : View {
                 var stocks : String = "100"
                 var passage : Int = 100
                 for ing in tabIng{
-                    print(ing.model.ingredientName)
-                    print("\(ing.model.ingredientStocks)bbbb")
-                    print("\(ing.ingredientStocks)bbbb")
+                    
 
                     passage = Int(ing.ingredientStocks)! - Int(tabQuantity[i])*nbPlat
                     stocks = String(passage)
@@ -79,6 +72,7 @@ struct StockView : View {
                     .background(Color.green.opacity(0.85))
                     .cornerRadius(8)
                     .foregroundColor(Color.white)
+                
             })
                 Button(action : {showingSheet.toggle()
                     
@@ -100,6 +94,8 @@ extension StockView {
     
     private func form() -> some View {
         Form {
+            Text("Sélectionner un plat pour effectuer une vente et mettre les stocks à jour")
+
             Section(header : Text("Plat ")) {
                 Picker(selection: $selectedPlat, label: Text("Choisir un plat")) {
                     ForEach(ftvm.fts){ recette in

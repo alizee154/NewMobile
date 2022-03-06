@@ -4,7 +4,6 @@
 //
 //  Created by m1 on 28/02/2022.
 //
-
 import SwiftUI
 
 struct FTUIView : View {
@@ -44,21 +43,30 @@ struct FTUIView : View {
                 
                 Spacer()
                 
-                VStack(spacing : 20){
+                VStack(){
                     Group{
                         Text(ft.ficheTechniqueName)
                             .font(.largeTitle)
+                            //.italic()
                             .bold()
                             .multilineTextAlignment(.center)
-                            .padding(10)
-                        Text("Réalisé par \(ft.ficheTechniqueAuthor)")
-                            .padding(10)
-                        Text("\(ft.ficheTechniqueDesc)")
-                            .padding(10)
-                        Stepper("Nombre de couverts :  \(number)",value: $number, in :  1...100)
-                            .padding(.leading)
-                            .padding(.trailing)
+                            .padding(5)
+                        Image("MainDishDivider")
+                            .resizable()
+                            .frame(width: 300, height: 30, alignment: .center)
                             .padding(.bottom, 10)
+                            .padding(.top, 10)
+                        Text("Réalisé par \(ft.ficheTechniqueAuthor)")
+                            .padding(.bottom, 10)
+                            .padding(.top, 10)
+                        Text("\(ft.ficheTechniqueDesc)")
+                            .padding(5)
+                        Text("Nombre de couverts :")
+                            .padding(5)
+                        Stepper("\(number)",value: $number, in :  1...100)
+                            .padding(.leading, 100)
+                            .padding(.trailing, 100)
+                            .padding(.bottom, 30)
                         VStack(alignment : .leading){
                             Text("Etapes :")
                                 .font(.title)
@@ -72,25 +80,32 @@ struct FTUIView : View {
                             ListEtapeView(ft : ft, ftvm : ftvm, etape : etape)
                             
                         }
+                        
                     }
                     Text("Synthèse : ")
                         .font(.title)
                         .underline()
+                        .padding(.top, 30)
                     Group{
                         Text("Ingrédients utilisés : ")
                             .font(.headline)
                             .padding(10)
-                        ForEach(listIng(ft: ft).indices, id: \.self)//tracksVM.tracks, id: \.trackId){
-                        {
-                            ing in
-                            HStack{
-                                Text(listIng(ft: ft)[ing].ingredientName)
-                                Text(listQuantity(ft: ft)[ing])
-                                Text(listIng(ft: ft)[ing].ingredientUnit)
-                                
-                            }
+                        VStack{
+                            ForEach(listIng(ft: ft).indices, id: \.self)//tracksVM.tracks, id: \.trackId){
+                            {
+                                ing in
+                                HStack{
+                                    Text(listIng(ft: ft)[ing].ingredientName)
+                                    Text(listQuantity(ft: ft)[ing])
+                                    Text(listIng(ft: ft)[ing].ingredientUnit)
+                                    
+                                }
 
+                            }
                         }
+                        Image("divider3")
+                            .resizable()
+                            .frame(width: 100, height: 60, alignment: .center)
                         Text("Paramètres pour le calcul de coûts : ")
                             .font(.headline)
                             .padding(10)
@@ -122,6 +137,9 @@ struct FTUIView : View {
                         }
                         .padding(10)
                     }
+                    Image("divider3")
+                        .resizable()
+                        .frame(width: 100, height: 60, alignment: .center)
                     Text("Coûts")
                         .font(.headline)
                         .padding(10)
@@ -164,6 +182,9 @@ struct FTUIView : View {
                         }
                     }
                     .padding(10)
+                    Image("divider3")
+                        .resizable()
+                        .frame(width: 100, height: 60, alignment: .center)
                     Text("Prix de vente et bénéfice")
                         .font(.headline)
                         .padding(10)
@@ -202,7 +223,7 @@ struct FTUIView : View {
                             Text("Modifier")
                                 .bold()
                                 .frame(width: 100, height: 40, alignment: .center)
-                                .background(Color.blue.opacity(0.35))
+                                .background(Color.green.opacity(0.35))
                                 .cornerRadius(8)
                                 .foregroundColor(Color.white)
                         }).sheet(isPresented: $showingSheet) { ModifFTView(ft : ft, ftvm : ftvm) }
@@ -227,6 +248,7 @@ struct FTUIView : View {
                        // Spacer()
                     }
                     
+                    
                 }
                 //.frame(maxWidth : .infinity, alignment :.leading)
                 //.padding(.horizontal)
@@ -242,7 +264,7 @@ struct FTUIView : View {
             
         }
         .ignoresSafeArea()
-        .background(Color(red: 0.8784, green : 0.8039, blue : 0.6627))
+        .background(Color(red: 0.8784, green : 0.8039, blue : 0.6627).opacity(0.5))
 
         
     }
@@ -297,6 +319,4 @@ extension Double {
         return Darwin.round(self*multiplier) / multiplier
     }
 }
-
-
 

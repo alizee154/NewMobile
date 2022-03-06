@@ -5,6 +5,7 @@
 //  Created by m1 on 28/02/2022.
 //
 
+
 import SwiftUI
 
 struct FTCardView : View {
@@ -76,6 +77,8 @@ struct FTCardView : View {
         .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
     }
 }
+
+
 
 
 

@@ -31,8 +31,6 @@
 		6F512B7527CCE6F900482417 /* FTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B7427CCE6F900482417 /* FTViewModel.swift */; };
 		6F512B7727CCE73E00482417 /* FTVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B7627CCE73E00482417 /* FTVM.swift */; };
 		6F512B7B27CCED6900482417 /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B7A27CCED6900482417 /* IngredientView.swift */; };
-		6F512B8027CD072800482417 /* IngredientDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B7F27CD072800482417 /* IngredientDTO.swift */; };
-		6F512B8227CD083D00482417 /* IngredientDTOListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B8127CD083D00482417 /* IngredientDTOListViewModel.swift */; };
 		6F512B8427CE3C8100482417 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B8327CE3C8100482417 /* ShareView.swift */; };
 		6F512B8627CE3CB900482417 /* PdfCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B8527CE3CB900482417 /* PdfCreator.swift */; };
 		6F512B8827CE3D2400482417 /* Etiquette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F512B8727CE3D2400482417 /* Etiquette.swift */; };
@@ -99,8 +97,6 @@
 		6F512B7427CCE6F900482417 /* FTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTViewModel.swift; sourceTree = "<group>"; };
 		6F512B7627CCE73E00482417 /* FTVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTVM.swift; sourceTree = "<group>"; };
 		6F512B7A27CCED6900482417 /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
-		6F512B7F27CD072800482417 /* IngredientDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTO.swift; sourceTree = "<group>"; };
-		6F512B8127CD083D00482417 /* IngredientDTOListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDTOListViewModel.swift; sourceTree = "<group>"; };
 		6F512B8327CE3C8100482417 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		6F512B8527CE3CB900482417 /* PdfCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfCreator.swift; sourceTree = "<group>"; };
 		6F512B8727CE3D2400482417 /* Etiquette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Etiquette.swift; sourceTree = "<group>"; };
@@ -170,7 +166,6 @@
 		6F39A4CC27BE844800CDC010 /* ProjetAWI */ = {
 			isa = PBXGroup;
 			children = (
-				6F512B7E27CD071400482417 /* DTO */,
 				397F6EC427D363CF000262C3 /* GoogleService-Info.plist */,
 				6F39A4FA27BE86C400CDC010 /* ViewModel */,
 				6F39A4F927BE86B100CDC010 /* View */,
@@ -252,7 +247,6 @@
 				6F512B8927CE3D7F00482417 /* ContentViewModel.swift */,
 				6F512B7427CCE6F900482417 /* FTViewModel.swift */,
 				6F512B7627CCE73E00482417 /* FTVM.swift */,
-				6F512B8127CD083D00482417 /* IngredientDTOListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -298,14 +292,6 @@
 				6F512B8D27CF9FF500482417 /* AddIngToStepView.swift */,
 			);
 			path = Ingredient;
-			sourceTree = "<group>";
-		};
-		6F512B7E27CD071400482417 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				6F512B7F27CD072800482417 /* IngredientDTO.swift */,
-			);
-			path = DTO;
 			sourceTree = "<group>";
 		};
 		6F512B8F27D12F5300482417 /* Stock */ = {
@@ -464,11 +450,9 @@
 				6F512B7B27CCED6900482417 /* IngredientView.swift in Sources */,
 				6F512B7127CCE63D00482417 /* ModifFTView.swift in Sources */,
 				6F9098A527C51E1900243E88 /* IngredientIntent.swift in Sources */,
-				6F512B8227CD083D00482417 /* IngredientDTOListViewModel.swift in Sources */,
 				6F9098AB27C51EF200243E88 /* Etape.swift in Sources */,
 				6F9098AF27C51FA000243E88 /* IngredientsVM.swift in Sources */,
 				6F512B7527CCE6F900482417 /* FTViewModel.swift in Sources */,
-				6F512B8027CD072800482417 /* IngredientDTO.swift in Sources */,
 				6F512B7727CCE73E00482417 /* FTVM.swift in Sources */,
 				6F39A4D027BE844800CDC010 /* ContentView.swift in Sources */,
 				6F512B6727CCE4A200482417 /* ListEtapeView.swift in Sources */,
@@ -654,7 +638,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjetAWI/Preview Content\"";
-				DEVELOPMENT_TEAM = 627DNH3252;
+				DEVELOPMENT_TEAM = CZH86V37X8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -683,7 +667,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjetAWI/Preview Content\"";
-				DEVELOPMENT_TEAM = 627DNH3252;
+				DEVELOPMENT_TEAM = CZH86V37X8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

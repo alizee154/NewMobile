@@ -5,6 +5,7 @@
 //  Created by m1 on 28/02/2022.
 //
 
+
 import SwiftUI
 
 struct ListEtapeView : View {
@@ -27,5 +28,4 @@ struct ListEtapeView : View {
         }
     }
 }
-
 

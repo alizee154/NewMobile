@@ -187,3 +187,4 @@ class FTViewModel : ObservableObject, FicheTechniqueObserver, Subscriber {
     }
     
 }
+

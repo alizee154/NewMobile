@@ -24,11 +24,11 @@ struct AddFTView : View {
     var body : some View {
         NavigationView {
             Form{
-                Section(header : Text("Name")) {
-                    TextField("Recipe Name", text: $newft.model.ficheTechniqueName)
+                Section(header : Text("Nom")) {
+                    TextField("Nom de la recette", text: $newft.model.ficheTechniqueName)
                 }
                 
-                Section(header : Text("Category")) {
+                Section(header : Text("Catégorie")) {
                     Picker(selection: $newft.model.ficheTechniqueCategory, label: Text("Choisir une catégorie")) {
                         ForEach(Category.allCases){ category in
                             Text(category.rawValue)
@@ -38,12 +38,12 @@ struct AddFTView : View {
                     .pickerStyle(.menu)
                 }
                 
-                Section(header : Text("Author")) {
-                    TextField("Author", text: $newft.model.ficheTechniqueAuthor)
+                Section(header : Text("Auteur")) {
+                    TextField("Nom de l'auteur", text: $newft.model.ficheTechniqueAuthor)
                 }
                 
                 Section(header : Text("Image")) {
-                    TextField("Image Link", text: $newft.model.image)
+                    TextField("Lien vers l'image (non obligatoire)", text: $newft.model.image)
                         .keyboardType(.URL)
                         .textContentType(.URL)
                 }
@@ -52,7 +52,7 @@ struct AddFTView : View {
                     TextEditor(text: $newft.model.ficheTechniqueDesc)
                 }
                 
-                Section(header : Text("Steps")) {
+                Section(header : Text("Etapes")) {
                     List{
                         ForEach(newft.model.listEtapes){
                             etape in
@@ -60,7 +60,7 @@ struct AddFTView : View {
                                 VStack(alignment: .leading){
                                     Text(etape.titreEtape)
                                     Spacer()
-                                    Text("\(etape.duree)")
+                                    Text("\(etape.duree) minutes")
                                         .bold()
                                 }
                             }
@@ -109,7 +109,7 @@ struct AddFTView : View {
                     //}
                 }
             })
-            .navigationTitle("New Recipe")
+            .navigationTitle("Nouvelle recette")
             .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)

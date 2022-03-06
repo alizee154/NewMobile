@@ -34,7 +34,7 @@ struct AddIngToStepView: View {
                     TextField("Quantité", text: $quantity)
                 }
             }
-            .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search ingredient")
+            .searchable(text: $search, placement: .navigationBarDrawer(displayMode: .always), prompt: "Chercher un ingrédient")
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading){
                     Button(action : {
@@ -61,7 +61,7 @@ struct AddIngToStepView: View {
                     .disabled(ingredient.ingredientName.isEmpty || quantity.isEmpty)
                 }
             })
-            .navigationTitle("Add Ingredient")
+            .navigationTitle("Ajouter un ingrédient")
             .navigationBarTitleDisplayMode(.inline)
         }
        // .onAppear() {

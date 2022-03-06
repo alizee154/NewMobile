@@ -4,7 +4,6 @@
 //
 //  Created by m1 on 28/02/2022.
 //
-
 import SwiftUI
 
 struct EtapeUIView : View {
@@ -29,11 +28,15 @@ struct EtapeUIView : View {
                     }
                 }
             }
-            .background(Color(red: 0.8784, green : 0.8039, blue : 0.6627))
+//.background(Color(red: 0.8784, green : 0.8039, blue : 0.6627).opacity(0.5))
+//            Image("ba")
+//                .resizable()
+//                .frame(width: 300, height: 300, alignment: .center)
         }
         .navigationBarItems(trailing: Text("\(etape.duree) min")
                                 .bold())
-        .background(Color(red: 0.8784, green : 0.8039, blue : 0.6627))
+        //.background(Color(red: 0.8784, green : 0.8039, blue : 0.6627).opacity(0.5))
     }
 }
+
 

@@ -293,7 +293,7 @@ class IngredientViewModel : ObservableObject, IngredientObserver, Subscriber {
 //            }
 //    }
     func update(){
-        //updateIngredient(self.model)
+        up(ingredient : self.model)
     }
     func up(ingredient : Ingredient){
         
@@ -310,4 +310,5 @@ class IngredientViewModel : ObservableObject, IngredientObserver, Subscriber {
     }
    
 }
+
 

@@ -49,4 +49,3 @@ struct ListFTView : View {
     }
 }
 
-

@@ -12,10 +12,10 @@ struct TabBar : View {
     @State var presented = false
     let icons = [
         "house",
-        "gear",
+        "heart.text.square",
         "plus",
-        "lasso",
-        "message"
+        "leaf.circle",
+        "cart"
     ]
     
     @ObservedObject var ftvm : FTVM

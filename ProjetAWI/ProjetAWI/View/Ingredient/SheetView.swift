@@ -28,16 +28,20 @@ struct SheetView: View {
         VStack{
             Form{
                 Section{
-                    VStack(alignment: .leading){Text("Nouveau nom : ")
+                    VStack(alignment: .leading){
+                        Text("Nouveau nom : ")
                         .padding(10)
                     TextField("Entrer le nouveau nom", text: $vmingredient.ingredientName)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(10)
                     Text("Nouvelle unité : ")
                         .padding(10)
-                    TextField("Entrer la nouvelle unité", text: $vmingredient.ingredientUnit)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(10)}
+                        Picker("Unité", selection: $vmingredient.ingredientUnit) {
+                                    Text("Kg").tag("Kg")
+                                    Text("L").tag("L")
+                                    Text("Pièce(s)").tag("Pièce(s)")
+                                
+                        }.pickerStyle(.menu)
                     Text("Nouveau stock : ")
                         .padding(10)
                     TextField("Entrer le nouveau stock", text: $vmingredient.ingredientStocks)
@@ -48,22 +52,29 @@ struct SheetView: View {
                     TextField("Entrer le nouveau prix unitaire", text: $vmingredient.ingredientUnitprice)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(10)
-                    Text("Nouvelle catégorie : ")
-                        .padding(10)
-                    Picker("Catégorie", selection: $vmingredient.ingredientCategory) {
-                        ForEach(CategoryIng.allCases){ categorie in
-                            Text(categorie.rawValue)
-                                .tag(categorie)
-                        }
-                    }.pickerStyle(.menu)
-                    Text("Allergène : ")
-                        .padding(10)
-                    Picker("Allergène", selection: $vmingredient.ingredientAllergene) {
-                            Text("Oui").tag("oui")
-                            Text("Non").tag("non")
-                        }.pickerStyle(.menu)
+                    
                 }
+                    VStack(alignment: .leading){
+                        Text("Nouvelle catégorie : ")
+                            .padding(10)
+                        Picker("Catégorie", selection: $vmingredient.ingredientCategory) {
+                            ForEach(CategoryIng.allCases){ categorie in
+                                Text(categorie.rawValue)
+                                    .tag(categorie)
+                            }
+                        }.pickerStyle(.menu)
+                        Text("Allergène : ")
+                            .padding(10)
+                        Picker("Allergène", selection: $vmingredient.ingredientAllergene) {
+                                Text("Oui").tag("oui")
+                                Text("Non").tag("non")
+                            }.pickerStyle(.menu)
+                        
+                    }
+
             }
+                HStack{
+                    Spacer()
             Button(action : {
 
                 intent.intentToChangeName(name: vmingredient.ingredientName); intent.intentToChangeUnit(unit: vmingredient.ingredientUnit); intent.intentToChangeStocks(stocks: vmingredient.ingredientStocks); intent.intentToChangeUnitprice(unitprice: vmingredient.ingredientUnitprice); intent.intentToChangeCategory(category: vmingredient.ingredientCategory); intent.intentToChangeAllergene(allergene: vmingredient.ingredientAllergene);
@@ -83,6 +94,9 @@ struct SheetView: View {
                     .foregroundColor(Color.white)
             })
                 .padding()
+                    Spacer()
+            }
+                    
         }
         .onChange(of: vmingredient.error){
             error in
@@ -100,4 +114,5 @@ struct SheetView: View {
         
     }
     
+}
 }

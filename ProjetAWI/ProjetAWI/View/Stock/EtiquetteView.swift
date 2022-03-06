@@ -4,7 +4,6 @@
 //
 //  Created by m1 on 01/03/2022.
 //
-
 import Foundation
 import SwiftUI
 import PDFKit
@@ -21,7 +20,7 @@ struct EtiquetteView: View {
             VStack {
                 form()
                 
-                Button(action : {
+                /*Button(action : {
                    /* var buy = self.ftvm.getRecetteByNameBack(name: "Al");print("hola"); print(ftvm.doc); print("hey")*/
 
                 }, label : {
@@ -31,7 +30,7 @@ struct EtiquetteView: View {
                         .background(Color.red.opacity(0.35))
                         .cornerRadius(8)
                         .foregroundColor(Color.white)
-                })
+                })*/
                 shareButton()
                 Spacer()
               

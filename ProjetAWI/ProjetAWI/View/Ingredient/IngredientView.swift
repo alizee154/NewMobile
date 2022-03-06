@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IngredientView: View {
     //@ObservedObject var ingredientsVM : IngredientsVM = IngredientsVM()
-    @ObservedObject var ingredientsVM : IngredientsVM 
+    @ObservedObject var ingredientsVM : IngredientsVM
     @State private var search : String = ""
     @State private var showingSheet = false
 
@@ -127,4 +127,3 @@ struct IngredientView: View {
 
     
 */
-

@@ -39,7 +39,7 @@ struct AddEtapeView : View {
                 }
                 
                 Section(header : Text("Durée")) {
-                    TextField("Durée", text: $newstep.duree)
+                    TextField("Durée (en minute)", text: $newstep.duree)
                 }
                 
                 Section(header : Text("Ingrédients")) {
@@ -99,7 +99,7 @@ struct AddEtapeView : View {
                     //}
                 }
             })
-            .navigationTitle("New Step")
+            .navigationTitle("Nouvelle étape")
             .navigationBarTitleDisplayMode(.inline)
         }
         

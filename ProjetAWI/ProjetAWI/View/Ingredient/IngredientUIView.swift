@@ -4,7 +4,6 @@
 //
 //  Created by m1 on 22/02/2022.
 //
-
 import Foundation
 import SwiftUI
 
@@ -17,26 +16,51 @@ struct IngredientUIView : View {
 
     var body : some View {
         ScrollView{
+            Image(systemName: "menucard.fill")
+                .imageScale(.large)
+               // .resizable()
+                //.frame(width: 300, height: 30, alignment: .center)
+                .padding(.bottom, 10)
+                .foregroundColor(.green.opacity(0.35))
+
+                .padding(.top, 10)
         VStack{
-            Image(systemName: "heart.fill")
+            /*Image(systemName: "heart.fill")
                 .imageScale(.large)
                 .foregroundColor(.green)
-                .padding(10)
+                .padding(10)*/
             Text(ingredient.ingredientName).bold()
+                .font(.title)
+            Image("MainDishDivider")
+                .resizable()
+                .frame(width: 300, height: 30, alignment: .center)
+                .padding(.bottom, 10)
+                .padding(.top, 10)
             /*Text("Nom de l'ingrédient : \(ingredient.ingredientName)")
                 .padding(10)*/
             VStack(alignment: .leading){
-                Text("Unité :   \(ingredient.ingredientUnit)")
+                Divider()
+                    .padding(10)
+                Text("\(ingredient.ingredientStocks)  \(ingredient.ingredientUnit) en stock")
                 .padding(10)
-            Text("Stock :   \(ingredient.ingredientStocks)")
+                Divider()
+                    .padding(10)
+                Text("Prix unitaire :   \(ingredient.ingredientUnitprice) euro(s)")
+                    .padding(10)
+                Divider()
+                    .padding(10)
+
+           /* Text("Stock :   \(ingredient.ingredientStocks)")
                 .padding(10)
             Text("Prix unitaire :   \(ingredient.ingredientUnitprice)")
                 .padding(10)
             Text("Catégorie :   \(ingredient.ingredientCategory)")
-                .padding(10)
-            Text("Allergène :   \(ingredient.ingredientAllergene)")
+                .padding(10)*/
+            Text("Ingrédient Allergène :   \(ingredient.ingredientAllergene)")
                 .padding(10)
             }
+            Divider()
+                .padding(10)
             Button(action : {
                 showingSheet.toggle()
             }, label : {

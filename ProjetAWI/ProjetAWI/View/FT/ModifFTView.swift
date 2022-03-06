@@ -29,11 +29,11 @@ struct ModifFTView: View {
         NavigationView{
             VStack{
                 Form{
-                    Section(header : Text("Name")) {
-                        TextField("Recipe Name", text: $ft.model.ficheTechniqueName)
+                    Section(header : Text("Nom")) {
+                        TextField("Nom de la recette", text: $ft.model.ficheTechniqueName)
                     }
                     
-                    Section(header : Text("Category")) {
+                    Section(header : Text("Catégorie")) {
                         Picker("Catégorie", selection: $ft.model.ficheTechniqueCategory) {
                             ForEach(Category.allCases){ category in
                                 Text(category.rawValue)
@@ -43,12 +43,12 @@ struct ModifFTView: View {
                         .pickerStyle(.menu)
                     }
                     
-                    Section(header : Text("Author")) {
-                        TextField("Author", text: $ft.model.ficheTechniqueAuthor)
+                    Section(header : Text("Auteur")) {
+                        TextField("Auteur", text: $ft.model.ficheTechniqueAuthor)
                     }
                     
                     Section(header : Text("Image")) {
-                        TextField("Image Link", text: $ft.model.image)
+                        TextField("Lien de l'image (non obligatoire)", text: $ft.model.image)
                             .keyboardType(.URL)
                             .textContentType(.URL)
                     }
@@ -56,7 +56,7 @@ struct ModifFTView: View {
                     Section(header : Text("Description")) {
                         TextEditor(text: $ft.model.ficheTechniqueDesc)
                     }
-                    Section(header : Text("Steps")) {
+                    Section(header : Text("Etapes")) {
                         List{
                             ForEach(ft.model.listEtapes){
                                 etape in
@@ -64,7 +64,7 @@ struct ModifFTView: View {
                                     VStack(alignment: .leading){
                                         Text(etape.titreEtape)
                                         Spacer()
-                                        Text("\(etape.duree)")
+                                        Text("\(etape.duree) minutes")
                                             .bold()
                                     }
                                 }
@@ -111,7 +111,7 @@ struct ModifFTView: View {
                         //}
                     }
                 })
-                .navigationTitle("New Recipe")
+                .navigationTitle("Modifier la recette")
                 .navigationBarTitleDisplayMode(.inline)
             }
         }
@@ -124,5 +124,3 @@ struct ModifFTView: View {
     }
     
 }
-
-
